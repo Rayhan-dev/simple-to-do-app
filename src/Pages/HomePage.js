@@ -11,19 +11,19 @@ const HomePage = () => {
     const [userTasks, setUserTasks] = useState([]);
 
     
-    axios(`http://localhost:5000/allTasks`)
+    axios(`https://mysterious-sands-06157.herokuapp.com/allTasks`)
         .then(response => setUserTasks(response.data));
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/allTasks', {
+        axios.post('https://mysterious-sands-06157.herokuapp.com/allTasks', {
             email: user.email,
             name: taskName,
             description: taskDesc,
         })
     }
     const DeleteHandler = (id) => {
-        axios.delete(`http://localhost:5000/allTasks/${id}`);
+        axios.delete(`https://mysterious-sands-06157.herokuapp.com/allTasks/${id}`);
     }
     return (
         <div className='container'>
